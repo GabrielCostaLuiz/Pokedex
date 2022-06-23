@@ -31,7 +31,7 @@ interface ITypes {
 
 export function PokedexList() {
   const [pokemons, setPokemons] = useState<IPokemons[]>([]);
-  const [pokemon, setPokemon] = useState("");
+  const [pokemon, setPokemon] = useState<any>("");
   const [loadingPokemon, setLoadingPokemon] = useState(true);
   const [nextPokemonsPage, setNextPokemonsPage] = useState(0);
   const [allPokemons, setAllPokemons] = useState([]);
@@ -333,7 +333,7 @@ export function PokedexList() {
     });
   }
 
-  function cleanBackground(e) {
+  function cleanBackground(e: any) {
     if (e.classList.contains(e.htmlFor)) {
       e.classList.remove(e.htmlFor);
     }

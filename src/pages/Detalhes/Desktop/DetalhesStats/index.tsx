@@ -10,7 +10,7 @@ interface IProps {
 }
 
 export function DetalhesStats({ stats, colorBackground }: IProps) {
-  const [statsPokemon, setStatsPokemon] = useState(stats);
+  const [statsPokemon, setStatsPokemon] = useState<any>(stats);
 
   function getStats() {
     setStatsPokemon(stats);
@@ -40,7 +40,7 @@ export function DetalhesStats({ stats, colorBackground }: IProps) {
         </div>
         <div className="stats">
           <ul>
-            {statsPokemon.map((stat, index) => (
+            {statsPokemon.map((stat: any) => (
               <li
                 key={stat.base_stat}
                 className={`textColorType ${colorBackground}`}
@@ -51,7 +51,7 @@ export function DetalhesStats({ stats, colorBackground }: IProps) {
           </ul>
 
           <div className="statsBars">
-            {statsPokemon.map((stat, index) => (
+            {statsPokemon.map((stat: any, index: number) => (
               <div className="groupStatsBars">
                 <div
                   key={`${stat.stat.name}${index}bars`}

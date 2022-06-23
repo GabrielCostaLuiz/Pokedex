@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 import React, { useState } from "react";
 
 import { DetalhesSobre } from "../DetalhesSobre";
@@ -13,8 +14,8 @@ interface IProps {
   base_experience: number;
   height: number;
   weight: number;
-  stats: [];
-  types: string;
+  stats: any;
+  types: any;
   sprite: string;
 }
 export function DetalhesDesktop({

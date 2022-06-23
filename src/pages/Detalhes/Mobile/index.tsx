@@ -1,12 +1,10 @@
+/* eslint-disable consistent-return */
 import React, { useEffect, useState } from "react";
 import { BsArrowLeft } from "react-icons/bs";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { getPokemonEspecific } from "../../../apiPokemon";
-import balanca from "../../../assets/img/balanca.svg";
-import regua from "../../../assets/img/regua.svg";
 import { ImgPokemon } from "../../../components/C-Pokedex/ImgPokemon";
-import { DetalhesDesktop } from "../Desktop/DesktopDetalhes";
 import { DetalhesSobre } from "../Desktop/DetalhesSobre";
 import { DetalhesStats } from "../Desktop/DetalhesStats";
 import { Container } from "./style";
@@ -14,11 +12,20 @@ import { Container } from "./style";
 export function DetalhesMobile() {
   const params = useParams();
   const navigate = useNavigate();
-  const [pokemon, setPokemon] = useState({});
+  const [pokemon, setPokemon] = useState({
+    sprites: "a" as any,
+    name: "a" as any,
+    abilities: "a" as any,
+    base_experience: "a" as any,
+    height: "a" as any,
+    weight: "a" as any,
+    stats: "a" as any,
+    types: [] as any,
+    id: "a" as any,
+  });
   const [page, setPage] = useState("Sobre");
   const [loading, setLoading] = useState(true);
-  const [types, setTypes] = useState([]);
-  const [ability, setAbility] = useState([]);
+  const [types, setTypes] = useState<any>([]);
   const namePokemon = params.detalheName;
 
   const type = String(types[0]);
@@ -155,7 +162,7 @@ export function DetalhesMobile() {
       case "Stats":
         return (
           <DetalhesStats
-            key={pokemon.name}
+            key={pokemon.name!}
             stats={pokemon.stats}
             colorBackground={type}
           />
@@ -228,7 +235,7 @@ export function DetalhesMobile() {
           </div>
           <div className="divContent">
             <div className="divTypes">
-              {types.map((type) => (
+              {types.map((type: any) => (
                 <p className={type}>{type} </p>
               ))}
             </div>

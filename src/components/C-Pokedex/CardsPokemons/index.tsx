@@ -30,6 +30,10 @@ interface IPokemon {
 }
 
 interface IPokemon2 {
+  abilities: any;
+  height: number;
+  weight: number;
+  base_experience: number;
   name: string;
   url: string;
   id: number;
@@ -70,7 +74,7 @@ export default function CardsPokemons({ url }: IPokemon) {
   const [stats, setStats] = useState([] as IStatus[]);
   const [types, setTypes] = useState<ITypes[]>([]);
   const [details, setDetails] = useState(false);
-  const iconsTypes = {
+  const iconsTypes: any = {
     bug,
     dark,
     dragon,
@@ -188,22 +192,6 @@ export default function CardsPokemons({ url }: IPokemon) {
               <div>{loading ? null : higherStatusDefenseOrSpDefense()}</div>
             </div>
             <div className="moreDetails">
-              {/* {largura > 768 ? (
-                <button
-                  type="button"
-                  className={loading ? "" : type.toString()}
-                  onClick={(e: any) => rotateCard(e.target)}
-                >
-                  Mais Detalhes
-                </button>
-              ) : (
-                <Link
-                  to={`/detalhes/${pokemon.name}`}
-                  className={loading ? "" : type.toString()}
-                >
-                  Mais Detalhes
-                </Link>
-              )} */}
               <button
                 type="button"
                 className={loading ? "" : type.toString()}

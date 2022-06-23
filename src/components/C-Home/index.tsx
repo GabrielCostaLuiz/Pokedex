@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 import background from "../../assets/img/homeDesktop.svg";
 import backgroundMob from "../../assets/img/homeMobile.svg";
-import { Footer } from "../../pages/Footer";
 import { Container } from "./style";
 
 export function HomeMain() {

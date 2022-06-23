@@ -27,7 +27,7 @@ interface IProps {
   base_experience: number;
   height: number;
   weight: number;
-  types: string;
+  types: any;
   colorBackground: string;
   name: string;
   sprite: string;
@@ -48,7 +48,7 @@ export function DetalhesSobre({
   const heightMetro = height / 10;
   const weightMetro = weight / 10;
   const firstAbility = abilitiesList[0];
-  const iconsTypes = {
+  const iconsTypes: any = {
     bug,
     dark,
     dragon,
@@ -71,7 +71,7 @@ export function DetalhesSobre({
 
   function getAbilities() {
     const abilitiesArray: ((prevState: string[]) => string[]) | any[] = [];
-    abilities.forEach((abilitie) => {
+    abilities.forEach((abilitie: any) => {
       abilitiesArray.push(abilitie.ability.name);
     });
     setAbilitiesList(abilitiesArray);
@@ -80,7 +80,7 @@ export function DetalhesSobre({
   function getWeaknesType() {
     getWeaknes(types[0]).then((weaknes) => {
       const weaknesArray: ((prevState: string[]) => string[]) | any[] = [];
-      weaknes.forEach((weaknes) => {
+      weaknes.forEach((weaknes: any) => {
         weaknesArray.push(weaknes.name);
       });
       setWeaknesList(weaknesArray);

@@ -170,6 +170,9 @@ export const Container = styled.div`
     }
 
     .footerTop {
+      &.hidden {
+        display: none;
+      }
       .divFooterTop {
         display: flex;
         gap: 1rem;
@@ -178,9 +181,6 @@ export const Container = styled.div`
         align-items: flex-end;
         margin-bottom: 0.5rem;
 
-        &.hidden {
-          display: none;
-        }
         p {
           width: calc(2rem + 4rem);
           white-space: nowrap;
