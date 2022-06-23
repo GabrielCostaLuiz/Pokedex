@@ -74,7 +74,7 @@ body.menu-expanded {
   }
 
   header{
-    box-shadow: 0px 300px 0px rgba(1, 17, 38, 0.2);
+    box-shadow: 0px 25rem 0px rgba(1, 17, 38, 0.2);
     border-radius: 0px 0px 16px 16px;
     position: absolute;
     top: 0;
